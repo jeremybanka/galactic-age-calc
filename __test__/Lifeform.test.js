@@ -16,7 +16,7 @@ describe(`new Lifeform(age, species, homeworld)`, () => {
       species: {
         id: `HUMAN`,
         adj: `Human`,
-        terranLifeExpectancy: [72, 122],
+        terranLifeExpectancy: { average: 72, record: 122 },
       },
       homeworld: {
         id: `EARTH`,

@@ -9,6 +9,6 @@ export class Lifeform {
   }
 
   cyclesSeenOf(PLANET) {
-    return this.age * PLANETS[PLANET].solarLapTime
+    return this.age / PLANETS[PLANET].solarLapTime
   }
 }

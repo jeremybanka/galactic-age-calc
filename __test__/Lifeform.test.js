@@ -41,8 +41,8 @@ describe(`Lifeform.prototype.nativeLifeExpectancy()`, () => {
     const venusianCrow = new Lifeform(12, BIRD, VENUS)
     const output = venusianCrow.nativeLifeExpectancy()
     const expected = {
-      average: (1 / 0.65) * 10,
-      record: (1 / 0.65) * 120,
+      average: (1 / 0.62) * 10,
+      record: (1 / 0.62) * 120,
     }
     expect(output).toEqual(expected)
   })
@@ -75,12 +75,12 @@ describe(`Lifeform.prototype.cyclesYetToSeeOf(PLANET_X)`, () => {
       of VENUS`, () => {
     const meAsVenusianDog = new Lifeform(25, DOG, VENUS)
     const output = meAsVenusianDog.cyclesYetToSeeOf(JUPITER)
-    const avgLifetimeVenus = (1 / 0.65) * 10
-    const rcdLifetimeVenus = (1 / 0.65) * 29
+    const avgLifetimeVenus = (1 / 0.62) * 10
+    const rcdLifetimeVenus = (1 / 0.62) * 29
     const avgLifetimeVenusRem = avgLifetimeVenus - 25
     const rcdLifetimeVenusRem = rcdLifetimeVenus - 25
-    const avgCyclesYetOfJpr = avgLifetimeVenusRem * (0.65 / 11.86)
-    const recCyclesYetOfJpr = rcdLifetimeVenusRem * (0.65 / 11.86)
+    const avgCyclesYetOfJpr = avgLifetimeVenusRem * (0.62 / 11.86)
+    const recCyclesYetOfJpr = rcdLifetimeVenusRem * (0.62 / 11.86)
     const expected = {
       average: avgCyclesYetOfJpr,
       record: recCyclesYetOfJpr,

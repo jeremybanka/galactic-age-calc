@@ -30,9 +30,14 @@ describe(`new Lifeform(age, species, homeworld)`, () => {
 
 describe(`Lifeform.prototype.cyclesSeenOf(PLANET_X)`, () => {
   it(`returns how many Sol-cycles of MERCURY kitty saw from EARTH`, () => {
-    const kitty = new Lifeform(1, CAT, MERCURY)
+    const kitty = new Lifeform(1, CAT, EARTH)
     const output = kitty.cyclesSeenOf(MERCURY)
     expect(output).toBe(1 / 0.24)
+  })
+  it(`returns how many Sol-cycles of MARS doggo saw from VENUS`, () => {
+    const doggo = new Lifeform(1, DOG, VENUS)
+    const output = doggo.cyclesSeenOf(MARS)
+    expect(output).toBe(0.62 / 1.88)
   })
 })
 
@@ -85,7 +90,14 @@ describe(`Lifeform.prototype.cyclesYetToSeeOf(PLANET_X)`, () => {
       average: avgCyclesYetOfJpr,
       record: recCyclesYetOfJpr,
     }
-    console.log(expected)
     expect(output).toEqual(expected)
+  })
+})
+
+describe(`Lifeform.prototype.stateAgeOn(PLANET_X)`, () => {
+  it(`pretty-prints a statement about how old you'd be on X`, () => {
+    const kitty = new Lifeform(1, CAT, EARTH)
+    const output = kitty.stateAgeOn(MERCURY)
+    expect(output).toBe(`In Mercurian years, you'd be ${1 / 0.24}.`)
   })
 })

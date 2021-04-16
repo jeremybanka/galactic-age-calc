@@ -30,11 +30,11 @@ module.exports = {
       `error`,
       {
         overrides: {
-          if: { after: false },
-          while: { after: false },
-          for: { after: false },
-          switch: { after: false },
-          catch: { after: false },
+          if: { after: true },
+          while: { after: true },
+          for: { after: true },
+          switch: { after: true },
+          catch: { after: true },
         },
       },
     ],

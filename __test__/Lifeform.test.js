@@ -111,19 +111,42 @@ describe(`Lifeform.prototype.stateRemainingTimeOn(PLANET_X)`, () => {
       `On average, you will live 1 more Terran year. To beat the world record for your species, you'll have to live 46 more Terran years.`
     )
   })
+  it(`explains the prospects of a newborn Martian spider 
+      on earth`, () => {
+    const spiderFromMars = new Lifeform(1.5, CAT, MARS)
+    const output = spiderFromMars.stateRemainingTimeOn(EARTH)
+    expect(output).toBe(
+      `On average, you will live 12 more Terran years. To beat the world record for your species, you'll have to live 35 more Terran years.`
+    )
+  })
   it(`congratulates a Jovian bird for reaching old age`, () => {
-    const jovianBirb = new Lifeform(1, BIRD, JUPITER)
+    const jovianBirb = new Lifeform(0.86, BIRD, JUPITER)
     const output = jovianBirb.stateRemainingTimeOn(MERCURY)
     expect(output).toBe(
-      `Congratulations. You have exceeded the average lifespan of your species by a whopping 8 Mercurian years. To beat the world record for your species, you'll only have to live 451 more Mercurian years. Keep it up, champ!`
+      `Congratulations. You have exceeded the average lifespan of your species by a whopping 1 Mercurian year. To beat the world record for your species, you'll only have to live 458 more Mercurian years. Keep it up, champ!`
+    )
+  })
+  it(`congratulates a Martian human for barely reaching old age`, () => {
+    const jovianBirb = new Lifeform(64, HUMAN, MARS)
+    const output = jovianBirb.stateRemainingTimeOn(MARS)
+    expect(output).toBe(
+      `Congratulations. You have exceeded the average lifespan of your species by a whopping 26 Martian years. To beat the world record for your species, you'll only have to live 1 more Martian year. Keep it up, champ!`
     )
   })
   it(`congratulates the oldest person alive 
       for their sustained victory`, () => {
-    const veryOldPerson = new Lifeform(3000, HUMAN, MERCURY)
+    const veryOldPerson = new Lifeform(509, HUMAN, MERCURY)
     const output = veryOldPerson.stateRemainingTimeOn(MERCURY)
     expect(output).toBe(
-      `Wow, nice one! You defeated the previous old-age record-holder of your species by an impressive 2492 Mercurian years. An average member of your species lives to be just 300 Mercurian years old. Bet you'd hate to have been dead for 2700 years!`
+      `Wow, nice one! You defeated the previous old-age record-holder of your species by an impressive 1 Mercurian year. An average member of your species lives to be just 300 Mercurian years old. Bet you'd hate to have been dead for 209 years!`
+    )
+  })
+  it(`congratulates the oldest spider alive 
+      for their sustained victory`, () => {
+    const veryOldPerson = new Lifeform(13201, SPIDER, EARTH)
+    const output = veryOldPerson.stateRemainingTimeOn(EARTH)
+    expect(output).toBe(
+      `Wow, nice one! You defeated the previous old-age record-holder of your species by an impressive 13155 Terran years. An average member of your species lives to be just 1 Terran year old. Bet you'd hate to have been dead for 13200 years!`
     )
   })
 })

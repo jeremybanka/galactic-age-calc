@@ -76,8 +76,7 @@ describe(`Lifeform.prototype.cyclesYetToSeeOf(PLANET_X)`, () => {
     expect(output).toEqual(expected)
   })
   it(`returns how many cycles of JUPITER I'd have left 
-      to see if I were a DOG measuring my age by cycles
-      of VENUS`, () => {
+      to see if I were a DOG who lived on VENUS`, () => {
     const meAsVenusianDog = new Lifeform(25, DOG, VENUS)
     const output = meAsVenusianDog.cyclesYetToSeeOf(JUPITER)
     const avgLifetimeVenus = (1 / 0.62) * 10
@@ -101,3 +100,31 @@ describe(`Lifeform.prototype.stateAgeOn(PLANET_X)`, () => {
     expect(output).toBe(`In Mercurian years, you'd be ${1 / 0.24}.`)
   })
 })
+
+/* eslint-disable max-len */
+describe(`Lifeform.prototype.stateRemainingTimeOn(PLANET_X)`, () => {
+  it(`explains the prospects of a newborn Martian spider 
+      on earth`, () => {
+    const spiderFromMars = new Lifeform(0, SPIDER, MARS)
+    const output = spiderFromMars.stateRemainingTimeOn(EARTH)
+    expect(output).toBe(
+      `On average, you will live 1 more Terran year. To beat the world record for your species, you'll have to live 46 more Terran years.`
+    )
+  })
+  it(`congratulates a Jovian bird for reaching old age`, () => {
+    const jovianBirb = new Lifeform(1, BIRD, JUPITER)
+    const output = jovianBirb.stateRemainingTimeOn(MERCURY)
+    expect(output).toBe(
+      `Congratulations. You have exceeded the average lifespan of your species by a whopping 8 Mercurian years. To beat the world record for your species, you'll only have to live 451 more Mercurian years. Keep it up, champ!`
+    )
+  })
+  it(`congratulates the oldest person alive 
+      for their sustained victory`, () => {
+    const veryOldPerson = new Lifeform(3000, HUMAN, MERCURY)
+    const output = veryOldPerson.stateRemainingTimeOn(MERCURY)
+    expect(output).toBe(
+      `Wow, nice one! You defeated the previous old-age record-holder of your species by an impressive 2492 Mercurian years. An average member of your species lives to be just 300 Mercurian years old. Bet you'd hate to have been dead for 2700 years!`
+    )
+  })
+})
+/* eslint-enable max-len */

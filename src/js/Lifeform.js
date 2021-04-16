@@ -12,28 +12,28 @@ export default class Lifeform {
     return this.age / PLANETS[PLANET].solarLapTime
   }
 
-  cyclesYetToSeeOf(planetName) {
-    const planet = PLANETS[planetName]
+  nativeLifeExpectancy() {
     let { average, record } = this.species.terranLifeExpectancy
     const nativeCyclesPerTerranCycle = 1 / this.homeworld.solarLapTime
     average *= nativeCyclesPerTerranCycle
     record *= nativeCyclesPerTerranCycle
-    const nativeLifeExpectancy = { average, record }
-    console.log(nativeCyclesPerTerranCycle)
-    const remainingNativeLifeExpectancy = {
-      average: nativeLifeExpectancy.average - this.age,
-      record: nativeLifeExpectancy.record - this.age,
-    }
-    console.log(remainingNativeLifeExpectancy)
-    const relativeSpeed = this.homeworld.solarLapTime / planet.solarLapTime
-    console.log(this.homeworld)
-    console.log(planet)
+    return { average, record }
+  }
 
-    const cyclesYet = {
-      average: remainingNativeLifeExpectancy.average * relativeSpeed,
-      record: remainingNativeLifeExpectancy.record * relativeSpeed,
-    }
+  nativeCyclesYetToSee() {
+    let { average, record } = this.nativeLifeExpectancy()
+    average -= this.age
+    record -= this.age
+    return { average, record }
+  }
 
-    return cyclesYet
+  cyclesYetToSeeOf(planetName) {
+    const { homeworld } = this
+    const observedPlanet = PLANETS[planetName]
+    const relativeSpeed = homeworld.solarLapTime / observedPlanet.solarLapTime
+    let { average, record } = this.nativeCyclesYetToSee()
+    average *= relativeSpeed
+    record *= relativeSpeed
+    return { average, record }
   }
 }

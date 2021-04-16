@@ -7,4 +7,8 @@ export class Lifeform {
     this.species = FAUNA[species]
     this.homeworld = PLANETS[homeworld]
   }
+
+  cyclesSeenOf(PLANET) {
+    return this.age * PLANETS[PLANET].solarLapTime
+  }
 }

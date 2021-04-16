@@ -11,4 +11,8 @@ export default class Lifeform {
   cyclesSeenOf(PLANET) {
     return this.age / PLANETS[PLANET].solarLapTime
   }
+
+  cyclesYetToSeeOf(PLANET) {
+    return this.species.terranLifeExpectancy
+  }
 }

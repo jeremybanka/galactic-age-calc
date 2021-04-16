@@ -35,3 +35,15 @@ describe(`Lifeform.prototype.cyclesSeenOf(PLANET_X)`, () => {
     expect(output).toBe(1 / 1.88)
   })
 })
+
+describe(`Lifeform.prototype.cyclesYetToSeeOf(PLANET_X)`, () => {
+  it(`returns how many cycles of JUPITER I have left to see `, () => {
+    const me = new Lifeform(25, HUMAN, EARTH)
+    const output = me.cyclesYetToSeeOf(JUPITER)
+    const expected = {
+      average: (72 - 25 * 1) / 11.86,
+      record: (122 - 25 * 1) / 11.86,
+    }
+    expect(output).toBe(expected)
+  })
+})

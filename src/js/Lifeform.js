@@ -8,8 +8,9 @@ export default class Lifeform {
     this.homeworld = PLANETS[homeworld]
   }
 
-  cyclesSeenOf(PLANET) {
-    return this.age / PLANETS[PLANET].solarLapTime
+  cyclesSeenOf(planetName) {
+    const earthAge = this.age * this.homeworld.solarLapTime
+    return earthAge / PLANETS[planetName].solarLapTime
   }
 
   nativeLifeExpectancy() {
@@ -35,5 +36,11 @@ export default class Lifeform {
     average *= relativeSpeed
     record *= relativeSpeed
     return { average, record }
+  }
+
+  stateAgeOn(planetName) {
+    const planet = PLANETS[planetName]
+    const ageOnPlanet = this.cyclesSeenOf(planetName)
+    return `In ${planet.adj} years, you'd be ${ageOnPlanet}.`
   }
 }

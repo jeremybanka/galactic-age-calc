@@ -1,0 +1,27 @@
+{
+  "MERCURY": {
+    "id": "MERCURY",
+    "adj": "Mercurian",
+    "solarLapTime": 0.24
+  },
+  "VENUS": {
+    "id": "VENUS",
+    "adj": "Venusian",
+    "solarLapTime": 0.65
+  },
+  "EARTH": {
+    "id": "EARTH",
+    "adj": "Terran",
+    "solarLapTime": 1
+  },
+  "MARS": {
+    "id": "MARS",
+    "adj": "Martian",
+    "solarLapTime": 1.88
+  },
+  "JUPITER": {
+    "id": "JUPITER",
+    "adj": "Jovian",
+    "solarLapTime": 11.86
+  }
+}

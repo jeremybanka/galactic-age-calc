@@ -1,5 +1,5 @@
-import PLANETS from "./data/planetarium"
-import FAUNA from "./data/faunapedia"
+import PLANETS from "./data/planetarium.json"
+import FAUNA from "./data/faunapedia.json"
 
 export default class Lifeform {
   constructor(age, species, homeworld) {

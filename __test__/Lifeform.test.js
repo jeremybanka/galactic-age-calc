@@ -1,6 +1,6 @@
 import Lifeform from "../src/js/Lifeform"
-import PLANETS from "../src/js/data/planetarium"
-import FAUNA from "../src/js/data/faunapedia"
+import PLANETS from "../src/js/data/planetarium.json"
+import FAUNA from "../src/js/data/faunapedia.json"
 
 const PLANET_NAMES = Object.keys(PLANETS)
 const [MERCURY, VENUS, EARTH, MARS, JUPITER] = PLANET_NAMES

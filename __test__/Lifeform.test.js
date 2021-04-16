@@ -61,13 +61,31 @@ describe(`Lifeform.prototype.nativeCyclesYetToSee()`, () => {
 })
 
 describe(`Lifeform.prototype.cyclesYetToSeeOf(PLANET_X)`, () => {
-  it(`returns how many cycles of JUPITER I have left to see `, () => {
+  it(`returns how many cycles of JUPITER I have left to see`, () => {
     const me = new Lifeform(25, HUMAN, EARTH)
     const output = me.cyclesYetToSeeOf(JUPITER)
     const expected = {
       average: 72 / 11.86 - 25 / 11.86,
       record: 122 / 11.86 - 25 / 11.86,
     }
+    expect(output).toEqual(expected)
+  })
+  it(`returns how many cycles of JUPITER I'd have left 
+      to see if I were a DOG measuring my age by cycles
+      of VENUS`, () => {
+    const meAsVenusianDog = new Lifeform(25, DOG, VENUS)
+    const output = meAsVenusianDog.cyclesYetToSeeOf(JUPITER)
+    const avgLifetimeVenus = (1 / 0.65) * 10
+    const rcdLifetimeVenus = (1 / 0.65) * 29
+    const avgLifetimeVenusRem = avgLifetimeVenus - 25
+    const rcdLifetimeVenusRem = rcdLifetimeVenus - 25
+    const avgCyclesYetOfJpr = avgLifetimeVenusRem * (0.65 / 11.86)
+    const recCyclesYetOfJpr = rcdLifetimeVenusRem * (0.65 / 11.86)
+    const expected = {
+      average: avgCyclesYetOfJpr,
+      record: recCyclesYetOfJpr,
+    }
+    console.log(expected)
     expect(output).toEqual(expected)
   })
 })

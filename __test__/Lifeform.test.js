@@ -44,6 +44,6 @@ describe(`Lifeform.prototype.cyclesYetToSeeOf(PLANET_X)`, () => {
       average: (72 - 25 * 1) / 11.86,
       record: (122 - 25 * 1) / 11.86,
     }
-    expect(output).toBe(expected)
+    expect(output).toEqual(expected)
   })
 })

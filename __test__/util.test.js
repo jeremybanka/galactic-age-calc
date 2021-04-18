@@ -1,4 +1,4 @@
-import { whichever, d, simpleOrdinal } from "../src/js/core"
+import { whichever, d, simpleOrdinal } from "../src/js/util"
 
 describe(`simpleOrdinal(maybeNaturalNumber)`, () => {
   it(`errors if it sees a negative int`, () => {

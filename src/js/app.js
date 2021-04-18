@@ -4,7 +4,7 @@ import "../styles/font-face.scss"
 // UI
 import $ from "jquery"
 // BIZ
-import { simpleOrdinal, whichever, d } from "./core"
+import { simpleOrdinal, whichever, d } from "./util"
 import Lifeform from "./Lifeform"
 // DATA
 import FAUNA from "./data/faunapedia.json"

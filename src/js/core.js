@@ -24,7 +24,7 @@ function simpleOrdinal(maybeNaturalNumber) {
   return numString + ordinalSuffix
 }
 
-function pickRandom(array) {
+function whichever(array) {
   const randomIdx = d(array.length) - 1
   return array[randomIdx]
 }
@@ -40,4 +40,4 @@ function d(howManyFaces = 2, howManyDice = 1) {
   return gross
 }
 
-export { simpleOrdinal, pickRandom, d }
+export { simpleOrdinal, whichever, d }

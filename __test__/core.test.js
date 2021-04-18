@@ -1,4 +1,4 @@
-import { pickRandom, d, simpleOrdinal } from "../src/js/core"
+import { whichever, d, simpleOrdinal } from "../src/js/core"
 
 describe(`simpleOrdinal(maybeNaturalNumber)`, () => {
   it(`errors if it sees a negative int`, () => {
@@ -34,10 +34,10 @@ describe(`simpleOrdinal(maybeNaturalNumber)`, () => {
   })
 })
 
-describe(`pickRandom(array)`, () => {
-  it(`rolls a die with 6 faces and returns the result`, () => {
+describe(`whichever(array)`, () => {
+  it(`returns a random thing from that array`, () => {
     const nums = [6, 12, 65, 1]
-    const result = pickRandom(nums)
+    const result = whichever(nums)
     const gotOne = nums.includes(result)
     expect(gotOne).toBe(true)
   })

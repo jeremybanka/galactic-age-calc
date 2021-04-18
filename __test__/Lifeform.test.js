@@ -97,7 +97,8 @@ describe(`Lifeform.prototype.stateAgeOn(PLANET_X)`, () => {
   it(`pretty-prints a statement about how old you'd be on X`, () => {
     const kitty = new Lifeform(1, CAT, EARTH)
     const output = kitty.stateAgeOn(MERCURY)
-    expect(output).toBe(`In Mercurian years, you'd be ${1 / 0.24}.`)
+    const expectedAge = Math.round(1 / 0.24)
+    expect(output).toBe(`In Mercurian years, you'd be about ${expectedAge}.`)
   })
 })
 

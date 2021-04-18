@@ -41,7 +41,8 @@ export default class Lifeform {
   stateAgeOn(planetName) {
     const planet = PLANETS[planetName]
     const ageOnPlanet = this.cyclesSeenOf(planetName)
-    return `In ${planet.adj} years, you'd be ${ageOnPlanet}.`
+    const ageRounded = Math.round(ageOnPlanet)
+    return `In ${planet.adj} years, you'd be about ${ageRounded}.`
   }
 
   /* eslint-disable max-len */

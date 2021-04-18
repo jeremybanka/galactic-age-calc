@@ -10,7 +10,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: `TITLE`,
+      title: `Galactic Age Calculator`,
       favicon: `src/images/favicon.png`,
       template: `src/index.html`, // template file
       filename: `index.html`, // output file

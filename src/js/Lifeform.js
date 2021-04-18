@@ -51,12 +51,13 @@ export default class Lifeform {
     const remainingCycles = this.cyclesYetToSeeOf(planetName)
     const averageRemaining = Math.round(remainingCycles.average)
     const recordRemaining = Math.round(remainingCycles.record)
+    console.log(averageRemaining, recordRemaining)
     const yearsAvg = Math.abs(averageRemaining) === 1 ? `year` : `years`
     const yearsRcd = Math.abs(recordRemaining) === 1 ? `year` : `years`
     if (averageRemaining > 0 && recordRemaining > 0) {
       return `On average, you will live ${averageRemaining} more ${planet.adj} ${yearsAvg}. To beat the world record for your species, you'll have to live ${recordRemaining} more ${planet.adj} ${yearsRcd}.`
     }
-    if (averageRemaining < 0 && recordRemaining > 0) {
+    if (averageRemaining <= 0 && recordRemaining > 0) {
       const overkill = -1 * Math.round(remainingCycles.average)
       const yearsOvk = overkill === 1 ? `year` : `years`
       return `Congratulations. You have exceeded the average lifespan of your species by a whopping ${overkill} ${planet.adj} ${yearsOvk}. To beat the world record for your species, you'll only have to live ${recordRemaining} more ${planet.adj} ${yearsRcd}. Keep it up, champ!`

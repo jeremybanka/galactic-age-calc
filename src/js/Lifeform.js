@@ -51,7 +51,6 @@ export default class Lifeform {
     const remainingCycles = this.cyclesYetToSeeOf(planetName)
     const averageRemaining = Math.round(remainingCycles.average)
     const recordRemaining = Math.round(remainingCycles.record)
-    console.log(averageRemaining, recordRemaining)
     const yearsAvg = Math.abs(averageRemaining) === 1 ? `year` : `years`
     const yearsRcd = Math.abs(recordRemaining) === 1 ? `year` : `years`
     if (averageRemaining > 0 && recordRemaining > 0) {

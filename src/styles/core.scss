@@ -1,0 +1,24 @@
+body {
+  background-color: black;
+  button {
+    font-family: "Manufab";
+    font-variation-settings: "wght" 200;
+    background-color: white;
+    cursor: pointer;
+    outline: none;
+    flex-shrink: 0;
+    font-size: 30px;
+    height: calc(100vh - 16px);
+    width: calc(100vw - 16px);
+    padding: 0;
+    border: none;
+    border-radius: 20px;
+    &:hover,
+    &:focus {
+      transform: scale(1.01);
+    }
+    &:active {
+      transform: scale(0.99);
+    }
+  }
+}

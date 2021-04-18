@@ -1,6 +1,16 @@
 import { pickRandom, d, simpleOrdinal } from "../src/js/core"
 
 describe(`simpleOrdinal(maybeNaturalNumber)`, () => {
+  it(`errors if it sees a negative int`, () => {
+    expect(() => {
+      simpleOrdinal(-1)
+    }).toThrow(Error)
+  })
+  it(`errors if it sees a float`, () => {
+    expect(() => {
+      simpleOrdinal(1.01)
+    }).toThrow(Error)
+  })
   it(`gives '1st' for 1`, () => {
     expect(simpleOrdinal(1)).toBe(`1st`)
   })

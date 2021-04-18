@@ -7,6 +7,7 @@ _by Jeremy Banka_
 - 📄 HTML5
 - 💅 SASS ➡️ CSS3
 - ▶️ ES6 🛠 Airbnb ESLint (thanks to VS Code ext. ESLint by Dirk Baeumer)
+- 💲 jquery 3.6.0
 - ❓ jest 26.6.3
 - 📦 Webpack 5 for bundling my js modules.
 - 👨🏻‍🎨 Adobe Illustrator (comps/planning)
@@ -14,7 +15,15 @@ _by Jeremy Banka_
 
 ## Description
 
-Learn how many years you would live if you were born on Mars. Spoiler alert: not quite as many!
+Learn how long you would live if you were born on Mars. Spoiler alert: not quite as long!
+
+**Science fact**: That's because Mars years are longer than Earth years.
+
+Note that one of this application's most killer features is its uncanny ability to estimate its user's species, precise age, and planet of origin. If it gets any info wrong, you can reload to give another try or make do with its close approximation of the finer details.
+
+Make sure you keep your eye on the console!
+
+**Science Opinion**: 'Dog years' are a ludicrous notion and not real, because 'dog' is an animal species, not a known body orbiting Sol. Dogs live 10 Terran years, on average, all known examples having occurred on planet Earth.
 
 ## Setup/Installation Requirements
 
@@ -42,7 +51,7 @@ Learn how many years you would live if you were born on Mars. Spoiler alert: not
 
 ## Known Bugs
 
-- none identified
+- not yet galactic in scale, currently limited to the first five planets of our solar system.
 
 ## License
 
